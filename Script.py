@@ -16,7 +16,7 @@ Thanks for thinking about us.\nIt seems that you really love <a href=https://t.m
     ALRDY_UPLDD_TEXT = """✅ Content is already uploaded.\n\nName:{}\nPlease make sure about your spelling before submiting request..."""
     HELP_TXT = """𝙷𝙴𝚈 {}
 Here is the help for my COMMANDS."""
-    ABOUT_TXT = """🦅 Name: {}
+    ABOUT_TXT = """🦅 Name: <a href=https://t.me/PostQutoBot>Kajal Shukla</a>
 🦹 Creator: <a href=https://t.me/YourX>YourX</a>
 🤖 Version: 2.0 ⚡ """
     MANUELFILTER_TXT = """Help: <b>Filters</b>
@@ -70,7 +70,7 @@ Here is the help for my COMMANDS."""
     EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
 
 <b>NOTE:</b>
-these are the extra features of Lazy Princess
+these are the extra features of this bot
 
 <b>Commands and Usage:</b>
 • /id - <code>get id of a specified user.</code>
