@@ -333,12 +333,6 @@ async def next_page(bot, query):
                     for file in files
                 ]
 
-    btn.insert(0,
-        [ 
-	    InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://telegram.me/LazyDeveloper')
-        ] 
-    )
-
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -703,11 +697,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/LazyDeveloper'),
-            InlineKeyboardButton('♥️ Source', callback_data='source')
-        ], [
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('🔐 Close', callback_data='close_data')
+            InlineKeyboardButton('🏡 Home', callback_data='start'),
+            InlineKeyboardButton('🙅🏻 Close', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -727,8 +718,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "manuelfilter":
         buttons = [[
-            InlineKeyboardButton('🚪 Back', callback_data='help'),
-            InlineKeyboardButton('⏹️ Buttons', callback_data='button')
+            InlineKeyboardButton('🏂 Back', callback_data='help'),
+            InlineKeyboardButton('🚣 Buttons', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1171,8 +1162,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('refresh', callback_data='rfrsh')
+            InlineKeyboardButton('🏂 Back', callback_data='help'),
+            InlineKeyboardButton('♻️ Refresh', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -1460,12 +1451,7 @@ async def auto_filter(client, msg, spoll=False):
                     ]
                     for file in files
                 ]
-
-    btn.insert(0,
-        [ 
-	    InlineKeyboardButton(text="⚡ʜᴏᴡ to ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://telegram.me/LazyDeveloper'),
-        ] 
-    )
+		    
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
