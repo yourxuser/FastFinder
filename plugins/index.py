@@ -99,7 +99,7 @@ async def send_for_index(bot, message):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             return await message.reply(
-                f'\n⨳ *•.¸♡ LΛＺ𝐲 ＭⓄｄ𝓔 ♡¸.•* ⨳\n\n**__What do you want me to do with this file.?__**\n\n🆔Chat ID/ Username: <code>{chat_id}</code>\n💬Last Message ID: <code>{last_msg_id}</code> \n\n🎬**File Name** :- `{filename}`\n\n♻️**File Size** :- `{filesize}`',
+                f'\n\n**__What do you want me to do with this file.?__**\n\n🆔Chat ID/ Username: <code>{chat_id}</code>\n💬Last Message ID: <code>{last_msg_id}</code> \n\n🎬**File Name** :- `{filename}`\n\n♻️**File Size** :- `{filesize}`',
                 reply_to_message_id=message.id,
                 reply_markup=reply_markup)
         else:
