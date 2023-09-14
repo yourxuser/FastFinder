@@ -616,7 +616,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 return
             else:
                 # Create the inline keyboard button with callback_data
-                button = InlineKeyboardButton('▶ Gen Stream / Download Link', callback_data=f'generate_stream_link:{file_id}')
+                button = InlineKeyboardButton('▶️ Gen Stream / Download Link ◀️', callback_data=f'generate_stream_link:{file_id}')
                 # Create the inline keyboard markup with the button
                 keyboard = InlineKeyboardMarkup([[button]])
                 await client.send_cached_media(
@@ -657,7 +657,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f"{title}"
         await query.answer()
         # Create the inline keyboard button with callback_data
-        button = InlineKeyboardButton('▶ Gen Stream / Download Link', callback_data=f'generate_stream_link:{file_id}')
+        button = InlineKeyboardButton('◀️ Gen Stream / Download Link ▶️', callback_data=f'generate_stream_link:{file_id}')
         # Create the inline keyboard markup with the button
         keyboard = InlineKeyboardMarkup([[button]])
         await client.send_cached_media(
@@ -769,19 +769,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
             lazy_stream = f"{URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             lazy_download = f"{URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
 
-            xo = await query.message.reply_text(f'🔐')
+            xo = await query.message.reply_text(f'💌')
             await asyncio.sleep(1)
             await xo.delete()
 
             await log_msg.reply_text(
-                text=f"•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ꜰᴏʀ ɪᴅ #{user_id} \n•• ᴜꜱᴇʀɴᴀᴍᴇ : {username} \n\n•• File Name : {fileName}",
+                text=f"🔗 Your Link Generated \n🆔 ID :- {user_id} \n👻 Username : {username} \n\n🎬 File Name : {fileName}",
                 quote=True,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 Download", url=lazy_download),  # we download Link
                                                     InlineKeyboardButton('⚡ Stream Now', url=lazy_stream)]])  # web stream Link
             )
             await query.message.reply_text(
-                text="•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ☠︎⚔",
+                text="🔗 Link Generated Successfully 🚀",
                 quote=True,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 Download", url=lazy_download),  # we download Link
@@ -1446,11 +1446,11 @@ async def auto_filter(client, msg, spoll=False):
     #waiting user to complete imdb process @LazyDeveloperr
     user = message.from_user
     full_name = user.first_name + " " + user.last_name if user.last_name else user.first_name
-    waiting_message = await message.reply_text(f"Setting up your request {full_name}...")
+    waiting_message = await message.reply_text(f"Searching... {full_name}...")
     await asyncio.sleep(1)
     await waiting_message.delete()
     serve_message = await message.reply_text(f"⚡")
-    fetching_message = await message.reply_text(f"Searching........ {full_name}...")
+    fetching_message = await message.reply_text(f"Please Wait... {full_name}...")
 
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
