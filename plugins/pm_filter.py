@@ -774,7 +774,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await xo.delete()
 
             await log_msg.reply_text(
-                text=f"🔗 Your Link Generated \n🆔 ID :- {user_id} \n👻 Username : {username} \n\n🎬 File Name : {filename}",
+                text=f"🔗 Your Link Generated \n🆔 ID :- {user_id} \n👻 Username : {username} \n\n🎬 File Name : {fileName}",
                 quote=True,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 Download", url=lazy_download),  # we download Link
