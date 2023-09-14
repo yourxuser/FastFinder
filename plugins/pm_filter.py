@@ -1298,7 +1298,7 @@ async def auto_filter(client, msg, spoll=False):
                                                                                                                                         [InlineKeyboardButton("❌Reject Req", callback_data=f"notify_user_req_rejected:{user_id}:{requested_movie}")]
                                                                                                                                         ]))
                 
-                l = await message.reply_text(text=f" HEllo `{message.from_user.first_name}` 😎,\n\nYour ReQuest Has Been Send To Our **Admin's Dashboard** .\n➟ 📝 Name : `{search}`\n➟ 👮Requested By : `{message.from_user.first_name}`\n\nSupport:-\n@{ADMIN_USRNM}",
+                l = await message.reply_text(text=f"🦹 HEllo `{message.from_user.first_name}` ⚡,\n\nYour ReQuest Has Been Send To Our **Admin's Dashboard** .\n➟ 🎬Name : `{search}`\n➟ 🦅Requested By : `{message.from_user.first_name}`\n\nSupport:-\n@{ADMIN_USRNM}",
                                                                                                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("━ • │▌║  ᗩᗪᗪ ʍɛ 2 ᑌᖇ Ǥᖇᗝᑌᑭ  ║▌│ • ━", url=f'http://t.me/{temp.U_NAME}?startgroup=true')],[InlineKeyboardButton("✪ Dev Ch- ✪", url=f"https://t.me/{DEV_CHANNEL_USRNM}"), InlineKeyboardButton("✪ ＹＴ ✪", url=f"https://youtube.com/@{LAZY_YT_HANDLE}"), InlineKeyboardButton("✪ Main Ch- ✪", url=f"https://t.me/{MAIN_CHANNEL_USRNM}")],[InlineKeyboardButton("╚»♥️ Thank You ♥️«╝", callback_data="close_data")]]))
                 await asyncio.sleep(12)
                 await l.delete()    
@@ -1591,7 +1591,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("The requested content is currently unavailable in our database, have some patience 🙂 - our admin will upload it as soon as possible \n\nDiscuss issue with admin here 👉  <a href='https://t.me/PostWild'>Discuss Here</a> ♥️ ")
+        k = await msg.reply("The requested content is currently unavailable in our database, have some patience 🥹 - our admin will upload it as soon as possible \n\nDiscuss issue with admin here 👉  <a href='https://t.me/PostWild'>Discuss Here</a> ⚡ ")
         await asyncio.sleep(10)
         await k.delete()
         return
@@ -1603,7 +1603,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("Hey did you checked your spelling properly, here are some suggestions for you, please check if your requested content match anyone of these following suggestions...\n\nDiscuss issue with admin here 👉 <a href='https://t.me/PostWild'>Discuss Here</a> ♥️ ",
+    await msg.reply("Hey did you checked your spelling properly, here are some suggestions for you, please check if your requested content match anyone of these following suggestions...\n\nDiscuss issue with admin here 👉 <a href='https://t.me/PostWild'>Discuss Here</a> ⚡ ",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
