@@ -777,15 +777,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 text=f"•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ꜰᴏʀ ɪᴅ #{user_id} \n•• ᴜꜱᴇʀɴᴀᴍᴇ : {username} \n\n•• File Name : {fileName}",
                 quote=True,
                 disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 Download 📤", url=lazy_download),  # we download Link
-                                                    InlineKeyboardButton('🎬 Stream 📺', url=lazy_stream)]])  # web stream Link
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 Download", url=lazy_download),  # we download Link
+                                                    InlineKeyboardButton('⚡ Stream Now', url=lazy_stream)]])  # web stream Link
             )
             await query.message.reply_text(
                 text="•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ☠︎⚔",
                 quote=True,
                 disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 Download 📤", url=lazy_download),  # we download Link
-                                                    InlineKeyboardButton('🎬 Stream 📺', url=lazy_stream)]])  # web stream Link
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 Download", url=lazy_download),  # we download Link
+                                                    InlineKeyboardButton('⚡ Stream Now', url=lazy_stream)]])  # web stream Link
             )
         except Exception as e:
             print(e)  # print the error message
