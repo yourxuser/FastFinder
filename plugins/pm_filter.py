@@ -811,7 +811,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]]
             reply_markup_lzdv = InlineKeyboardMarkup(btn_lzdv)
             reply_markup = InlineKeyboardMarkup(btn)
-            await client.send_message(int(user_id), f"😒 oops! sona, Your requested content named `{movie}` is not available right now, we are really trying our best to serve you this content, can you please provide us some more details related to your query `{movie}`, \nSend details to Admin : <a href='https://telegram.me/{ADMIN_USRNM}'>**Send here...**</a>\n\n❤ Thank You for the contribution", reply_markup=reply_markup)
+            await client.send_message(int(user_id), f"🥴 oops! Your requested content named `{movie}` is not available right now, we are really trying our best to serve you this content, can you please provide us some more details related to your query `{movie}`, \nSend details to Admin : <a href='https://telegram.me/{ADMIN_USRNM}'>**Send here...**</a>\n\n❤ Thank You for the contribution", reply_markup=reply_markup)
             await query.edit_message_text(text=f"- __**User notified successfully sweetie...✅**__\n\n⏳**Status** : Not Available 😒.\n🪪**UserID** : `{user_id}`\n🎞**Content** : `{movie}`\n\n\n🦋",reply_markup=reply_markup_lzdv)
         # Delete callback query message
             await query.answer()
@@ -838,7 +838,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]]
             reply_markup_lzdv = InlineKeyboardMarkup(btn_lzdv)            
             reply_markup = InlineKeyboardMarkup(btn)
-            await client.send_message(int(user_id), f"🛋 Hey sona, Your requested content named `{movie}` is already available in our database! You can easily get this movie by searching it's correct name in our official group...\nSend details to Admin : \n\n❤ Thank You for the contribution", reply_markup=reply_markup)
+            await client.send_message(int(user_id), f"🛋 Hey Your requested content named `{movie}` is already available in our database! You can easily get this movie by searching it's correct name in our official group...\nSend details to Admin : \n\n❤ Thank You for the contribution", reply_markup=reply_markup)
             await query.edit_message_text(text=f"- __**User notified successfully sweetie...✅**__\n\n⏳**Status** : Already Uploaded ⚡.\n🪪**UserID** : `{user_id}`\n🎞**Content** : `{movie}`\n\n\n🦋",reply_markup=reply_markup_lzdv)
         # Delete callback query message
             await query.answer()
@@ -866,7 +866,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]]
             reply_markup_lzdv = InlineKeyboardMarkup(btn_lzdv) 
             reply_markup = InlineKeyboardMarkup(btn)
-            await client.send_message(int(user_id), f"✅ Hey sona, Your requested content named `{movie}` is now available in our database! You can easily get this movie by searching it's correct name in our official group...\n\n❤ Thank You for the contribution", reply_markup=reply_markup)
+            await client.send_message(int(user_id), f"✅ Hey Your requested content named `{movie}` is now available in our database! You can easily get this movie by searching it's correct name in our official group...\n\n❤ Thank You for the contribution", reply_markup=reply_markup)
             await query.edit_message_text(text=f"- __**User notified successfully sweetie...✅**__\n\n⏳**Status** : Upload done ✅.\n🪪**UserID** : `{user_id}`\n🎞**Content** : `{movie}`\n\n\n🦋", reply_markup=reply_markup_lzdv)
         # Delete callback query message
             await query.answer()
@@ -1289,7 +1289,7 @@ async def auto_filter(client, msg, spoll=False):
             user_id = message.from_user.id
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
-                await client.send_message(req_channel,f"-🦋 #REQUESTED_CONTENT 🦋-\n\n📝**Content Name** :`{search}`\n**Requested By**: {message.from_user.first_name}\n **USER ID**:{user_id}\n\n🗃️",
+                await client.send_message(req_channel,f"-⚡ #Requested 🦅-\n\n🎬**Name** :`{search}`\n🦹**Requested By**: {message.from_user.first_name}\n🆔**USER ID**:{user_id}\n",
                                                                                                        reply_markup=InlineKeyboardMarkup([
                                                                                                                                         [InlineKeyboardButton(text=f"🤞Request Recieved", callback_data=f"notify_user_req_rcvd:{user_id}:{requested_movie}")],
                                                                                                                                         [InlineKeyboardButton(text=f"✅Upload Done", callback_data=f"notify_userupl:{user_id}:{requested_movie}")],
@@ -1298,7 +1298,7 @@ async def auto_filter(client, msg, spoll=False):
                                                                                                                                         [InlineKeyboardButton("❌Reject Req", callback_data=f"notify_user_req_rejected:{user_id}:{requested_movie}")]
                                                                                                                                         ]))
                 
-                l = await message.reply_text(text=f"🦹 HEllo `{message.from_user.first_name}` ⚡,\n\nYour ReQuest Has Been Send To Our **Admin's Dashboard** .\n➟ 🎬Name : `{search}`\n➟ 🦅Requested By : `{message.from_user.first_name}`\n\nSupport:-\n@{ADMIN_USRNM}",
+                l = await message.reply_text(text=f"🦹 Hi `{message.from_user.first_name}` ⚡,\n\nYour ReQuest Has Been Send To Our **Admin's Dashboard** .\n🎬Name : `{search}`\n🦅Requested By : `{message.from_user.first_name}`\n\nSupport:-\n@{ADMIN_USRNM}",
                                                                                                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("━ • │▌║  ᗩᗪᗪ ʍɛ 2 ᑌᖇ Ǥᖇᗝᑌᑭ  ║▌│ • ━", url=f'http://t.me/{temp.U_NAME}?startgroup=true')],[InlineKeyboardButton("✪ Dev Ch- ✪", url=f"https://t.me/{DEV_CHANNEL_USRNM}"), InlineKeyboardButton("✪ ＹＴ ✪", url=f"https://youtube.com/@{LAZY_YT_HANDLE}"), InlineKeyboardButton("✪ Main Ch- ✪", url=f"https://t.me/{MAIN_CHANNEL_USRNM}")],[InlineKeyboardButton("╚»♥️ Thank You ♥️«╝", callback_data="close_data")]]))
                 await asyncio.sleep(12)
                 await l.delete()    
